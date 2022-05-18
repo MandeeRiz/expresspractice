@@ -6,12 +6,16 @@ const port = 3000;
 
 
 app.get("/", (req,res)=>{
-    res.send("Welcome to the Pokemon App!");
+    res.send(`Welcome to the Pokemon App!`);
 })
 
 
+let pokemon = require("./models/pokemon");
+console.log(pokemon);
 
-
+app.get("/pokemon", (req, res)=>{
+    res.send(pokemon);
+})
 
 
 
