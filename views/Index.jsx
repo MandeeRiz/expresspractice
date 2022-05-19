@@ -16,13 +16,13 @@ const myStyle = {
                   <div style={myStyle}>
                       <h1>See All The Pokemon!</h1>
                       <ul>
-                          <li>{pokemon[0].name}</li>
-                          <li>{pokemon[1].name}</li>
-                          <li>{pokemon[2].name}</li>
-                          <li>{pokemon[3].name}</li>
-                          <li>{pokemon[4].name}</li>
-                          <li>{pokemon[5].name}</li>
-                          <li>{pokemon[6].name}</li>
+                          {pokemon.map((pokemon, i)=>{
+                            return(
+                              <li>
+                                <a href={`/pokemon/${i}`}>{pokemon.name}</a>
+                              </li>
+                            )
+                          })}
                       </ul>
                   </div>
           );

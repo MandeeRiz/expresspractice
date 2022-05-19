@@ -14,16 +14,19 @@ app.get("/", (req,res)=>{
 
 
 let pokemon = require("./models/pokemon");
-
+let pokeData = require("./models/pokemon");
 
 app.get("/pokemon", (req, res)=>{
     res.render("Index", {pokemon:pokemon});
 });
 
-app.get("/pokemon/:id", (req, res)=>{
-    res.send(req.params.id);
-});
+//app.get("/pokemon/:id", (req, res)=>{
+//    res.send(pokemon[req.params.id]);
+//});
 
+app.get("/pokemon/:character", (req, res)=>{
+    res.render("Show", {pokemon: pokeData[req.params.character]})
+})
 
 
 app.listen(3000, ()=>{
